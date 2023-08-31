@@ -1,5 +1,5 @@
 namespace main {
-  //Compnent
+  //Compnent Class
   abstract class IceCream {
     public abstract name: string;
     public abstract calculateCost(): number;
@@ -40,7 +40,6 @@ namespace main {
   }
 
   // Concrete Decorartor
-
   class Sprinkles extends IceCreamDecorartor {
     protected _iceCream: IceCream;
     public constructor(iceCream: IceCream) {
@@ -54,6 +53,7 @@ namespace main {
     }
   }
 
+  //Decorartor Class Example
   class ChocleateChips extends IceCreamDecorartor {
     protected _iceCream: IceCream;
     public constructor(iceCream: IceCream) {
@@ -67,6 +67,7 @@ namespace main {
     }
   }
 
+  //Decorartor Class Example
   class FruitMix extends IceCreamDecorartor {
     protected _iceCream: IceCream;
     public constructor(iceCream: IceCream) {
@@ -80,12 +81,16 @@ namespace main {
     }
   }
 
+  //Decorartor Use Example
   let order: IceCream = new BasicIceCream();
   order = new Sprinkles(order);
   order = new ChocleateChips(order);
   order = new FruitMix(order);
 
   const appDiv: HTMLElement = document.getElementById('app');
-  appDiv.innerHTML = `<h1>${order.toString()}</h1>`;
+  appDiv.innerHTML = `
+  <h1>Decorator Design Pattern</h1>
+  <h3>Take all ok at the code</h3>
+  <h2>${order.toString()}</h2>`;
   console.log();
 }
